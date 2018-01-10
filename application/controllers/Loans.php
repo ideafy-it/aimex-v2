@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Controller for Loans MVC
+ */
 class Loans extends CI_Controller {
     public function view($page = 'home') {
         if($this->session->userdata('username') != '') {
