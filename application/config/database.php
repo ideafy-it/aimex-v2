@@ -95,34 +95,12 @@ $db['default'] = array(
 	'save_queries' => TRUE
 );
 
-$db['aimexadmin'] = array(
-	'dsn'	=> '',
-	'hostname' => 'DESKTOP-B88GNQ5',
-	'username' => 'aimexadmin',
-	'password' => 'admin',
-	'database' => 'aimexuat',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
 $db['aimex'] = array(
 	'dsn'	=> '',
-	'hostname' => 'DESKTOP-B88GNQ5',
+	'hostname' => 'localhost',
 	'username' => 'aimex',
 	'password' => '@imex',
-	'database' => 'aimexuat',
+	'database' => 'aimex',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
