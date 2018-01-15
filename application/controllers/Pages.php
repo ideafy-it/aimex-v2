@@ -85,16 +85,18 @@ class Pages extends CI_Controller {
 			$this->load->model('page_model');
 			$user_id = $this->page_model->can_login($username, $password);
 			if($user_id) {
-				$session_data = array('username' => $username);
-				$this->session->set_userdata($session_data);
 				foreach($user_id as $user_id) {
-					if($user_id->flag_deleted == 't') {
+					$session_data = array('username' => $username, 'role' =>$user_id->employee_position);
+					$this->session->set_userdata($session_data);
+					if($user_id->flag_deleted == '1') {
 						$this->session->set_flashdata('error', 'User has been deactivated');
 						$this->logout();
 					} else if($user_id->employee_position == 'Loans Processor') {
 						redirect(base_url().'loans/home');
-					} else if($user_id->employee_position == 'Loans Collector'){
-						redirect(base_url().'collection/home');
+					} else if($user_id->employee_position == 'Loans Collector') {
+						redirect(base_url().'collections/home');
+					} else if($user_id->employee_position == 'Manager') {
+						redirect(base_url());
 					} 
 				}
 			} else {
