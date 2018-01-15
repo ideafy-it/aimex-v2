@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'pages';
 $route['(:any)'] = 'pages/view/$1';
 $route['loans/(:any)'] = 'loans/view/$1';
-$route['collection/(:any)'] = 'collection/view/$1';
+$route['collections/(:any)'] = 'collections/view/$1';
+$route['clients/(:any)'] = 'clients/view/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
