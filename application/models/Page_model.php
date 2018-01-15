@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      */
     public function __construct() {
         parent::__construct();
-        $this->load->database('aimexlocal');
+        $this->load->database('aimex');
     }
     /**
      * A function that checks users 
@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      */
     function can_login($username, $password) {
         $this->db->where('employee_username', $username);
-        $query = $this->db->get('uat.tbl_employee');
+        $query = $this->db->get('tbl_employee');
         $user = $query->result();
 
         if (isset($user[0]->password)){
@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      */
     function register_employee($data=null) {
         if(!empty($data)) {
-            $this->db->insert('uat.tbl_employee', $data);
+            $this->db->insert('tbl_employee', $data);
             $ins_id = $this->db->insert_id();
             return $ins_id;
         } else {
