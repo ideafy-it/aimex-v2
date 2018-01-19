@@ -11,14 +11,16 @@ class Clients extends CI_Controller {
                 }
                 $data['title'] = ucfirst($page);
                 $data['username'] = $this->session->userdata('username');
+                $data['role'] = $this->session->userdata('role');
+                $data['employeeId'] = $this->session->userdata('employeeId');
+                $data['name'] = $this->session->userdata('name');
 
                 $this->load->view('_partials/_header', $data);
                 $this->load->view('_partials/_navbars/_clientsnavbar', $data);
                 $this->load->view('clients/'.$page, $data);
                 $this->load->view('_partials/_footer');
             } else {
-                $this->load->controller('collections');
-                $this->collections->view();
+                redirect(base_url().'collections/home');
             }
         } else {
             redirect(base_url());
