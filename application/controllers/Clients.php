@@ -21,8 +21,7 @@ class Clients extends CI_Controller {
                 $this->collections->view();
             }
         } else {
-            $this->load->controller('pages');
-            $this->pages->index();
+            redirect(base_url());
         }
     }
 }
