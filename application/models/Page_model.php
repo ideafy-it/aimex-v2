@@ -52,7 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         } else {
             return false;
         }
-         
     }
 
     /**

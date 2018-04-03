@@ -10,18 +10,11 @@
                     Clients                
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownClients">
-                    <a href="<?php echo base_url(); ?>clients/home" class="dropdown-item">Clients Application</a>
+                    <a href="<?php echo base_url(); ?>clients/home" class="dropdown-item">Clients Search</a>
+                    <a href="<?php echo base_url(); ?>clients/registerClient" class="dropdown-item">Client Registration</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownLoans" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Loans                
-                </a> 
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownLoans">
-                    <a href="<?php echo base_url(); ?>loans/home" class="dropdown-item">Loans</a>
-                </div>
-            </li>
-            <?php if($role == "Manager") { ?>
+           <?php if($role == "Manager") { ?>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownCollections" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Collections                

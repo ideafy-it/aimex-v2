@@ -54,5 +54,7 @@ $route['(:any)'] = 'pages/view/$1';
 $route['loans/(:any)'] = 'loans/view/$1';
 $route['collections/(:any)'] = 'collections/view/$1';
 $route['clients/(:any)'] = 'clients/view/$1';
+$route['clients/home/(:any)'] = 'clients/view/home/$1';
+$route['clients/function/(:any)'] = 'clients/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;

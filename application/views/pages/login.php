@@ -1,6 +1,13 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Log in</h1>
+        <hr class="my-4">
+        <p class="lead">Welcome to the Aimex Loaning System</p>
+    </div>
+</div>
+
 <div class="container">
     <div class="col-sm-10 col-sm-offset-1">
-        <h2>This is the Log in page</h2>
         <span class="text-danger"><?php echo $this->session->flashdata('error'); ?></span>
         <form method="post" action="<?php echo base_url();?>pages/login_validation">
             <div class="form-group">
