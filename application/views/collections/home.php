@@ -1,0 +1,1 @@
+<h2>Loans Collection Page</h2>
