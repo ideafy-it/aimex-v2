@@ -51,8 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'pages';
 $route['(:any)'] = 'pages/view/$1';
+// Loans
 $route['loans/(:any)'] = 'loans/view/$1';
+$route['loans/home/(:any)'] = 'loans/view/home/$1';
+$route['loans/function/(:any)'] = 'loans/$1';
+// Collections
 $route['collections/(:any)'] = 'collections/view/$1';
+// Clients
 $route['clients/(:any)'] = 'clients/view/$1';
 $route['clients/home/(:any)'] = 'clients/view/home/$1';
 $route['clients/function/(:any)'] = 'clients/$1';
