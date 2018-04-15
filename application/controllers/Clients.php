@@ -129,7 +129,7 @@ class Clients extends CI_Controller {
         }
     }
 
-    public function view_clients() {
+    // public function view_clients() {
 
-    }
+    // }
 }

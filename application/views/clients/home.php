@@ -38,7 +38,6 @@
                 <th>Client Number</th>
                 <th>Pension Type</th>
                 <th>Pension Number</th>
-                <th>Action</th>
             </tr>
         </thead>
      <tbody>
@@ -49,11 +48,10 @@
                     ?>
                     <tr>
                         <td><?php echo $row->id; ?></td>
-                        <td><?php echo $row->clientFirstName ." ". $row->clientLastName; ?></td>
+                        <td><a href="<?php echo base_url(); ?>loans/home/<?php echo $row->id; ?>"><?php echo $row->clientFirstName ." ". $row->clientLastName; ?></a></td>
                         <td><?php echo $row->contactNumber; ?></td>
                         <td><?php echo $row->pensionType; ?></td>
                         <td><?php echo $row->pensionNumber; ?></td>
-                        <td><a href="<?php echo base_url(); ?>loans/home">Check Loans</a></td>
                     </tr>
                     <?php
                 }
@@ -70,11 +68,10 @@
                     ?>
                     <tr>
                         <td><?php echo $row->id; ?></td>
-                        <td><?php echo $row->clientFirstName ." ". $row->clientLastName; ?></td>
+                        <td><a href="<?php echo base_url(); ?>loans/home/<?php echo $row->id; ?>"><?php echo $row->clientFirstName ." ". $row->clientLastName; ?></a></td>
                         <td><?php echo $row->contactNumber; ?></td>
                         <td><?php echo $row->pensionType; ?></td>
                         <td><?php echo $row->pensionNumber; ?></td>
-                        <td><a href="<?php echo base_url(); ?>loans/home">Check Loans</a></td>
                     </tr> 
                     <?php
                 }
