@@ -43,28 +43,28 @@ class Loans extends CI_Controller {
         $this->form_validation->set_rules('effectiveDate', 'Effective Date', 'required');
         $this->form_validation->set_rules('referenceCheck', 'Reference Check', 'trim|max_length[50]|required');
         $this->form_validation->set_rules('postAccount', 'Post to Account', 'trim|max_length[50]|required');
+        $id = $this->uri->segment(3);
         if($this->form_validation->run()) {
             $this->load-model('loan_model');
-            $id = $this->uri->segment(3);
             $data = array(
             'client'=>$id,
-            'loanType'=>$this->input->post('loanType');
-            'loanKind'=>"New Loan";
-            'monthlyPayment'=>$this->input->post('monthlyPayment');
-            'loanTerms'=>$this->input->post('loanTerms');
-            'interest'=>$this->input->post('interestRate');
-            'serviceFee'=>$this->input->post('serviceCharge');
-            'notarialFee'=>$this->input->post('notarialFee');
-            'releaseDate'=>$this->input->post('releaseDate');
-            'effectiveDate'=>$this->input->post('effectiveDate');
-            'paymentSchedule'=>$this->input->post('paymentSchedule');
-            'referenceCheck'=>$this->input->post('referenceCheck');
-            'postAccount'=>$this->input->post('postAccount');
+            'loanType'=>$this->input->post('loanType'),
+            'loanKind'=>"New Loan",
+            'monthlyPayment'=>$this->input->post('monthlyPayment'),
+            'loanTerms'=>$this->input->post('loanTerms'),
+            'interest'=>$this->input->post('interestRate'),
+            'serviceFee'=>$this->input->post('serviceCharge'),
+            'notarialFee'=>$this->input->post('notarialFee'),
+            'releaseDate'=>$this->input->post('releaseDate'),
+            'effectiveDate'=>$this->input->post('effectiveDate'),
+            'paymentSchedule'=>$this->input->post('paymentSchedule'),
+            'referenceCheck'=>$this->input->post('referenceCheck'),
+            'postAccount'=>$this->input->post('postAccount')
             );
             $resultLoan = $this->loan_model->enrollLoan($data);
             redirect(base_url().'loans/home/'.$id);
         } else {
-            redirect(base_url().'loans/addNewLoan/'$id);
+            redirect(base_url().'loans/addNewLoan/'.$id);
         }
     }
 }
