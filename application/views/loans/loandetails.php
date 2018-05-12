@@ -5,6 +5,11 @@
 	            foreach ($loan_details->result() as $row) {
 	?>
 	<div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <span class="col-7"><h5><?php echo $row->referenceNumber; ?></h5></span>
+                </div>
+            </div>
             <div class="card-body row">
                 <div class="col-6">
                     <p class="card-text">Loan Type: <?php echo $row->loanType; ?></p>
