@@ -33,7 +33,7 @@
 <div class="card">
     <h5 class="card-header">Renewal Loan</h5>
     <div class="card-body">
-        <form action="" method="post">
+        <form action="<?php echo base_url();?>loans/function/loan_validation" method="post">
             <div class="row col-12">
                 <div class="col-6">
                     <div class="form-group">
