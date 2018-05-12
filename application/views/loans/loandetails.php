@@ -1,8 +1,8 @@
 <div class="container">
 	<?php
-	    if(isset($loan_data)) {
-	        if($loan_data->num_rows() > 0) {
-	            foreach ($loan_data->result() as $row) {
+	    if(isset($loan_details)) {
+	        if($loan_details->num_rows() > 0) {
+	            foreach ($loan_details->result() as $row) {
 	?>
 	<div class="card">
             <div class="card-header">
@@ -31,7 +31,7 @@
 			</div>
 			 <div class="col-6">
 				<p class="card-text"><?php echo $row->monthlyPayment * $row->loanTerms ;?></p>
-			</div>
+			</div>		
 		</div>
 	</div>
 	<?php } 
