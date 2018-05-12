@@ -34,10 +34,11 @@
 				Notarial Fee </p>
 			</div>
 			 <div class="col-6">
-				<p class="card-text"><?php $loanAmount = $row->monthlyPayment * $row->loanTerms; echo $loanAmount?></p>
+				<p class="card-text"><?php $loanAmount = $row->monthlyPayment * $row->loanTerms; echo $loanAmount; ?></p>
 				 <p class="card-text">
 				 <?php echo $row->interest ;?> 
-				 <?php echo $row->interest * $row->loanTerms ;?>
+				 <?php  $fullinterest = $row->interest * $row->loanTerms;
+				 echo $fullinterest;?>
 				 <?php echo $row->serviceFee ;?> 
 				 <?php echo $row->notarialFee ;?>
 				</p> 
