@@ -21,6 +21,7 @@ class Loans extends CI_Controller {
                 if($id != null) {
                     $data['user_data'] = $this->loan_model->getClientById($id);
                     $data['loan_data'] = $this->loan_model->getLoansByClientId($id);
+                    $data['loan_details'] = $this->loan_model->getLoanById($id);
                 }
 
                 $this->load->view('_partials/_header', $data);
