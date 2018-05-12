@@ -32,7 +32,8 @@
                 </div>
             </div>
         </div>
-        <table>
+        <div style="overflow-y: scroll; height:200px;">
+        <table class = "table">
                 <tr>
                 <th>Reference Number</th>
                 <th>Loan Type</th>
@@ -63,4 +64,5 @@
     }
 }
 ?>
+</div>
 </div>
