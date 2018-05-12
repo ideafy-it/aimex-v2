@@ -54,8 +54,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="PaymentTerms">Payment Terms (In Months)</label>
-                        <input type="number" name="paymentTerms" id="PaymentTerms" class="form-control">
+                        <label for="loanTerms">Payment Terms (In Months)</label>
+                        <input type="number" name="loanTerms" id="loanTerms" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="InterestRate">Interest Rate</label>

@@ -38,7 +38,7 @@ class Loans extends CI_Controller {
     public function loan_validation() {
         $this->load->library('form_validation');
         // Loan Informatio
-        $this->form_validation->set_rules('paymentTerms', 'Payment Terms', 'trim|numeric|max_length[50]|required');
+        $this->form_validation->set_rules('loanTerms', 'Payment Terms', 'trim|numeric|max_length[50]|required');
         $this->form_validation->set_rules('monthlyPayment', 'Monthly Payment', 'trim|numeric|max_length[50]|required');
         $this->form_validation->set_rules('releaseDate', 'Release Date', 'required');
         $this->form_validation->set_rules('effectiveDate', 'Effective Date', 'required');
