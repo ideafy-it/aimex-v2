@@ -33,6 +33,8 @@
             </div>
         </div>
         <br>
+        <h5>Loans</h5>
+        <br>
         <div style="overflow-y: scroll; height:200px;">
         <table class = "table">
                 <tr>
