@@ -46,11 +46,13 @@
 		<table class = "table">
 	             <tr>
 	                <th>Interest</th>
+	                <th>Unearned Interest</th>
 	                <th>Service Charge</th>
 	                <th>Notarial Fee</th>
                 </tr>
                 <tr>
 	                <td><?php echo $row->interest; ?></td>
+	                <td><?php echo $loanAmount * $fullinterest ?></td>
 	                <td><?php echo $row->serviceFee; ?></td>
 	                <td><?php echo $row->notarialFee; ?></td>
                	</tr>
