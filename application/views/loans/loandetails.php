@@ -34,7 +34,7 @@
 				Notarial Fee </p>
 			</div>
 			 <div class="col-6">
-				<p class="card-text"><?php echo $row->monthlyPayment * $row->loanTerms ;?></p>
+				<p class="card-text"><?php $loanAmount = $row->monthlyPayment * $row->loanTerms; echo $loanAmount?></p>
 				 <p class="card-text">
 				 <?php echo $row->interest ;?> 
 				 <?php echo $row->interest * $row->loanTerms ;?>
@@ -42,9 +42,7 @@
 				 <?php echo $row->notarialFee ;?>
 				</p> 
 			</div>
-			Subtotal <?php echo $row->interest * $row->loanTerms + $row->serviceFee + $row->notarialFee ?>
-			Total Cashout <?php echo $row->monthlyPayment * $row->loanTerms *  $row->interest * $row->loanTerms - $row->serviceFee - $row->notarialFee?>
-
+			
 		</div>
 	</div>
 	<?php } 
