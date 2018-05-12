@@ -50,7 +50,17 @@
         foreach ($loan_data->result() as $row) {
 ?>
                 <tr>
-                <td><a href="<?php echo base_url();?>loans/loanDetails/<?php echo $row->id ?>"><?php echo $row->referenceNumber; ?></a></td>
+                <td><a href="<?php echo base_url();?>loans/loanDetails<?php 
+                    if($row->loanKind == 'New Loan') {
+                        echo "_new";
+                    } if($row->loanKind == 'Renewal Loan') {
+                        echo "_renewal";
+                    } if($row->loanKind == 'Extension Loan') {
+                        echo "_extension";
+                    } if($row->loanKind == 'Additional Loan') {
+                        echo "_additional";
+                    }
+                ?>/<?php echo $row->id ?>"><?php echo $row->referenceNumber; ?></a></td>
                 <td><?php echo $row->loanType; ?></td>
                 <td><?php echo $row->loanKind; ?></td>
                 <td><?php echo $row->monthlyPayment * $row->loanTerms; ?></td>

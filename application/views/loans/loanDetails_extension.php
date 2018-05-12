@@ -31,9 +31,9 @@
 			</div>
 			 <div class="col-6">
 			 	<?php
-			 		$loanAmount = $row->monthlyPayment * $row->$availMonths;
+			 		$loanAmount = $row->monthlyPayment * $row->availMonths;
 		            $rm = $row->remainingMonths * 2;
-		            $newmonth = $rm + $availMonths;
+		            $newmonth = $rm + $row->availMonths;
 		            $fullinterest = $newmonth * $row->interest;
 		            $fullcash = $loanAmount * $fullinterest;
 		            $withoutded =  $loanAmount - $fullcash;

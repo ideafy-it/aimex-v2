@@ -35,7 +35,7 @@
 		         $fullinterest = $row->interest * $row->loanTerms;
 		         $fullcash = $loanAmount * $fullinterest;
 				 $withoutded = $loanAmount - $fullcash;
-		         $deductions = $row->servicefee + $row->notarialfee;
+		         $deductions = $row->serviceFee + $row->notarialFee;
 		         $cashout = $withoutded - $deductions;
 		           ?>
 				<p class="card-text">
