@@ -34,6 +34,12 @@
 			</div>
 		</div>
 	</div>
-	<?php } ?>
+	<?php } 
+	} 
+	else {
+        redirect(base_url().'clients/home');
+    }
+}
+?>
 
 </div>
