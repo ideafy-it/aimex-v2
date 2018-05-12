@@ -20,6 +20,7 @@ class Loans extends CI_Controller {
                 $this->load->model('loan_model');
                 if($id != null) {
                     $data['user_data'] = $this->loan_model->getClientById($id);
+                    $data['loan_data'] = $this->loan_model->getLoansByClientId($id);
                 }
 
                 $this->load->view('_partials/_header', $data);
@@ -48,6 +49,7 @@ class Loans extends CI_Controller {
             $this->load->model('loan_model');
             $data = array(
             'client'=>$this->input->post('clientId'),
+            'referenceNumber'=>$this->input->post('referenceNumber'),
             'loanType'=>$this->input->post('loanType'),
             'loanKind'=>"New Loan",
             'monthlyPayment'=>$this->input->post('monthlyPayment'),

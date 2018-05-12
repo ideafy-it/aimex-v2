@@ -32,8 +32,32 @@
                 </div>
             </div>
         </div>
+        <table>
+                <tr>
+                <th>Reference Number</th>
+                <th>Loan Type</th>
+                <th>Loan Kind</th>
+                <th>Loan Amount</th>
+                <th>Monthly Payment</th>
+                <th>Payment Terms</th>
+                </tr>
 <?php
-        } 
+        };
+        foreach ($loan_data->result() as $row) {
+?>
+                <tr>
+                <td><?php ?></td>
+                <td><?php ?></td>
+                <td><?php ?></td>
+                <td><?php ?></td>
+                <td><?php ?></td>
+                <td><?php ?></td>
+                </tr>          
+<?php
+        }
+?>
+        </table>
+<?php
     } else {
         redirect(base_url().'clients/home');
     }

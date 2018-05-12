@@ -31,4 +31,9 @@ class Loan_model extends CI_Model {
             return false;
         }
     }
+
+    function getLoansByClientId($id) {
+        $query = $this->db->get_where('tbl_loans', array('client' => $id));
+        return $query;
+    }
 }

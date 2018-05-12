@@ -41,7 +41,8 @@
                 <input type="hidden" name="clientId" value="<?php echo $row->id; ?>">
                 <?php    
                 }
-                ?> 
+                ?>
+                <input type="hidden" name="referenceNumber" value="<?php echo date('Ymdhis');?>"> 
                 <div class="col-6">
                     <div class="form-group">
                         <label for="LoanType">Loan Type</label>
