@@ -33,9 +33,15 @@
 <div class="card">
     <h5 class="card-header">New Loan</h5>
     <div class="card-body">
-        <form action="<?php echo base_url();?>/loans/function/loan_validation" method="post">
+        <form action="<?php echo base_url();?>loans/function/loan_validation" method="post">
             <div class="row col-12">
-                
+               <?php
+                foreach($user_data->result() as $row) {
+                ?>
+                <input type="hidden" name="clientId" value="<?php echo $row->id; ?>">
+                <?php    
+                }
+                ?> 
                 <div class="col-6">
                     <div class="form-group">
                         <label for="LoanType">Loan Type</label>
