@@ -24,11 +24,12 @@
       <br><br>
 	<div>
 		<div class="col-6">
-			<p class="card-text">Loan Amount: </p>
+			<p class="card-text">Loan Amount </p>
 		</div>
 		 <div class="col-6">
-			<p class="card-text"><?php echo $row->monthlyPayment * $row->loanTerms;?></p>
+			<p class="card-text"><?php echo $row->monthlyPayment * $row->loanTerms ;?></p>
 		</div>
 
 	</div>
+	<?php } ?>
 </div>
