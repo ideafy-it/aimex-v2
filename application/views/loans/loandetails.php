@@ -43,7 +43,7 @@
 				</p> 
 			</div>
 			Subtotal <?php echo $row->interest * $row->loanTerms + $row->serviceFee + $row->notarialFee ?>
-			Total Cashout <?php echo $row->monthlyPayment * $row->loanTerms -  $row->interest * $row->loanTerms - $row->serviceFee - $row->notarialFee?>
+			Total Cashout <?php echo $row->monthlyPayment * $row->loanTerms *  $row->interest * $row->loanTerms - $row->serviceFee - $row->notarialFee?>
 
 		</div>
 	</div>
