@@ -36,7 +36,7 @@ class Loans extends CI_Controller {
 
     public function loan_validation() {
         $this->load->library('form_validation');
-        // Loan Information
+        // Loan Informatio
         $this->form_validation->set_rules('paymentTerms', 'Payment Terms', 'trim|numeric|max_length[50]|required');
         $this->form_validation->set_rules('monthlyPayment', 'Monthly Payment', 'trim|numeric|max_length[50]|required');
         $this->form_validation->set_rules('releaseDate', 'Release Date', 'required');
@@ -45,9 +45,26 @@ class Loans extends CI_Controller {
         $this->form_validation->set_rules('postAccount', 'Post to Account', 'trim|max_length[50]|required');
         if($this->form_validation->run()) {
             $this->load-model('loan_model');
+            $id = $this->uri->segment(3);
             $data = array(
-                '';
-            )
+            'client'=>$id,
+            'loanType'=>$this->input->post('loanType');
+            'loanKind'=>"New Loan";
+            'monthlyPayment'=>$this->input->post('monthlyPayment');
+            'loanTerms'=>$this->input->post('loanTerms');
+            'interest'=>$this->input->post('interestRate');
+            'serviceFee'=>$this->input->post('serviceCharge');
+            'notarialFee'=>$this->input->post('notarialFee');
+            'releaseDate'=>$this->input->post('releaseDate');
+            'effectiveDate'=>$this->input->post('effectiveDate');
+            'paymentSchedule'=>$this->input->post('paymentSchedule');
+            'referenceCheck'=>$this->input->post('referenceCheck');
+            'postAccount'=>$this->input->post('postAccount');
+            );
+            $resultLoan = $this->loan_model->enrollLoan($data);
+            redirect(base_url().'loans/home/'.$id);
+        } else {
+            redirect(base_url().'loans/addNewLoan/'$id);
         }
     }
 }
