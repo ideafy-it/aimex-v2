@@ -28,10 +28,10 @@
 		<div class="card-body row">
 			<div class="col-6">
 				<p class="card-text">Loan Amount </p>
-				<p class="card-text">Interest <?php echo $row->interest ;?></p>
-				<p class="card-text">Unearned Interest <?php echo $row->interest * $row->loanTerms ;?> </p>
-				<p class="card-text">Service Charge <?php echo $row->serviceFee ;?> </p>
-				<p class="card-text">Notarial Fee <?php echo $row->notarialFee ;?> </p>
+				<p class="card-text">Interest <?php echo $row->interest ;?> &nbsp;
+				Unearned Interest <?php echo $row->interest * $row->loanTerms ;?> &nbsp;
+				Service Charge <?php echo $row->serviceFee ;?> &nbsp;
+				Notarial Fee <?php echo $row->notarialFee ;?> </p>
 			</div>
 			 <div class="col-6">
 				<p class="card-text"><?php echo $row->monthlyPayment * $row->loanTerms ;?></p>
