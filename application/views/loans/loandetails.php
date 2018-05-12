@@ -28,22 +28,41 @@
 		<div class="card-body row">
 			<div class="col-6">
 				<p class="card-text">Loan Amount </p>
-				<p class="col-1">Interest</p>
-				Unearned Interest 
-				Service Charge 
-				Notarial Fee </p>
 			</div>
 			 <div class="col-6">
-				<p class="card-text"><?php $loanAmount = $row->monthlyPayment * $row->loanTerms; echo $loanAmount; ?></p>
-				 <p class="card-text">
-				 <?php echo $row->interest ;?> 
-				 <?php  $fullinterest = $row->interest * $row->loanTerms;
-				 echo $fullinterest;?>
-				 <?php echo $row->serviceFee ;?> 
-				 <?php echo $row->notarialFee ;?>
+			 	<?php
+			 		$loanAmount = $row->monthlyPayment * $row->loanTerms; 
+				 	$fullinterest = $row->interest * $row->loanTerms;
+				 	$deductions = $loanAmount * $fullinterest;
+		            $fullcash = $loanAmount - $deductions;
+		            $fees = $servicefee + $notarialfee;
+		            $cashout = $fullcash - $fees;
+		           ?>
+				<p class="card-text">
+					<?php echo $loanAmount; ?></p>
 				</p> 
 			</div>
-			
+		</div>
+		<table class = "table">
+	             <tr>
+	                <th>Interest</th>
+	                <th>Service Charge</th>
+	                <th>Notarial Fee</th>
+                </tr>
+                <tr>
+	                <td><?php echo $row->interest; ?></td>
+	                <td><?php echo $row->serviceFee; ?></td>
+	                <td><?php echo $row->notarialFee; ?></td>
+               	</tr>
+            
+            </table>
+         <div class="card-body row">
+			<div class="col-6">
+				<p class="card-text">Cashout </p>
+			</div>
+			<div class="col-6">
+				<p class="card-text"><?php echo $cashout; ?></p>
+			</div>
 		</div>
 	</div>
 	<?php } 
