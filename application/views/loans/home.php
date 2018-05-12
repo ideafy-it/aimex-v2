@@ -46,12 +46,12 @@
         foreach ($loan_data->result() as $row) {
 ?>
                 <tr>
-                <td><?php echo $row->referenceNumber; ?></td>
-                <td><?php $row->loanType; ?></td>
-                <td><?php $row->loanKind; ?></td>
-                <td><?php $row->monthlyPayment * $row->loanTerms; ?></td>
-                <td><?php $row->monthlyPayment; ?></td>
-                <td><?php $row->loanTerms; ?></td>
+                <td><a href="<?php echo base_url();?>loans/Loandetails/<?php echo $row->id ?>"><?php echo $row->referenceNumber; ?></a></td>
+                <td><?php echo $row->loanType; ?></td>
+                <td><?php echo $row->loanKind; ?></td>
+                <td><?php echo $row->monthlyPayment * $row->loanTerms; ?></td>
+                <td><?php echo $row->monthlyPayment; ?></td>
+                <td><?php echo $row->loanTerms; ?></td>
                 </tr>          
 <?php
         }
