@@ -50,7 +50,7 @@
         foreach ($loan_data->result() as $row) {
 ?>
                 <tr>
-                <td><a href="<?php echo base_url();?>loans/Loandetails/<?php echo $row->id ?>"><?php echo $row->referenceNumber; ?></a></td>
+                <td><a href="<?php echo base_url();?>loans/loanDetails/<?php echo $row->id ?>"><?php echo $row->referenceNumber; ?></a></td>
                 <td><?php echo $row->loanType; ?></td>
                 <td><?php echo $row->loanKind; ?></td>
                 <td><?php echo $row->monthlyPayment * $row->loanTerms; ?></td>
