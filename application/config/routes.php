@@ -54,7 +54,10 @@ $route['(:any)'] = 'pages/view/$1';
 // Loans
 $route['loans/(:any)'] = 'loans/view/$1';
 $route['loans/home/(:any)'] = 'loans/view/home/$1';
-$route['loans/loanDetails/(:any)'] = 'loans/view/loanDetails/$1';
+$route['loans/loanDetails_new/(:any)'] = 'loans/view/loanDetails_new/$1';
+$route['loans/loanDetails_new/(:any)'] = 'loans/view/oanDetails_new/$1';
+$route['loans/loanDetails_additional/(:any)'] = 'loans/view/loanDetails_additional/$1';
+$route['loans/loanDetails_extension/(:any)'] = 'loans/view/loanDetails_extension/$1';
 $route['loans/addNewLoan/(:any)'] = 'loans/view/addNewLoan/$1';
 $route['loans/addRenewLoan/(:any)'] = 'loans/view/addRenewLoan/$1';
 $route['loans/addExtensionLoan/(:any)'] = 'loans/view/addExtensionLoan/$1';
