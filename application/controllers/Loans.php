@@ -45,7 +45,7 @@ class Loans extends CI_Controller {
         $this->form_validation->set_rules('postAccount', 'Post to Account', 'trim|max_length[50]|required');
         $id = $this->uri->segment(3);
         if($this->form_validation->run()) {
-            $this->load-model('loan_model');
+            $this->load->model('loan_model');
             $data = array(
             'client'=>$this->input->post('clientId'),
             'loanType'=>$this->input->post('loanType'),
