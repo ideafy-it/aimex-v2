@@ -20,6 +20,15 @@ class Loan_model extends CI_Model {
         $query = $this->db->get_where('tbl_client', array('id' => $id));
         return $query;
         // SELECT * FROM tbl_client where id = '$id'
+    }
 
+    function enrollLoan($data=null) {
+        if(!empty($data)) {
+            $this->db->insert('tbl_loans', $data);
+            $ins_id = $this->db->insert_id();
+            return $ins_id;
+        } else {
+            return false;
+        }
     }
 }

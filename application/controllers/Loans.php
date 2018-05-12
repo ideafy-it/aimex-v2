@@ -20,8 +20,6 @@ class Loans extends CI_Controller {
                 $this->load->model('loan_model');
                 if($id != null) {
                     $data['user_data'] = $this->loan_model->getClientById($id);
-                } else {
-                    redirect(base_url(). 'clients/home');
                 }
 
                 $this->load->view('_partials/_header', $data);
@@ -36,10 +34,20 @@ class Loans extends CI_Controller {
         }
     }
 
-    // public function check_loans($id) {
-    //     $id = $this->uri->segment(4);
-    //     $this->load->model('loan_model');
-    //     $data['data'] = $this->loan_model->getClientById($id);
-    //     $this->load->view('loans/home', $data);
-    // }
+    public function loan_validation() {
+        $this->load->library('form_validation');
+        // Loan Information
+        $this->form_validation->set_rules('paymentTerms', 'Payment Terms', 'trim|numeric|max_length[50]|required');
+        $this->form_validation->set_rules('monthlyPayment', 'Monthly Payment', 'trim|numeric|max_length[50]|required');
+        $this->form_validation->set_rules('releaseDate', 'Release Date', 'required');
+        $this->form_validation->set_rules('effectiveDate', 'Effective Date', 'required');
+        $this->form_validation->set_rules('referenceCheck', 'Reference Check', 'trim|max_length[50]|required');
+        $this->form_validation->set_rules('postAccount', 'Post to Account', 'trim|max_length[50]|required');
+        if($this->form_validation->run()) {
+            $this->load-model('loan_model');
+            $data = array(
+                '';
+            )
+        }
+    }
 }
