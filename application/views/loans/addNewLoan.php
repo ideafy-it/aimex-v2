@@ -35,6 +35,7 @@
     <div class="card-body">
         <form action="<?php echo base_url();?>loans/function/loan_validation" method="post">
             <div class="row col-12">
+                <input type="hidden" name="loanKind" value="New Loan">
                <?php
                 foreach($user_data->result() as $row) {
                 ?>

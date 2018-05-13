@@ -35,6 +35,15 @@
     <div class="card-body">
         <form action="<?php echo base_url();?>loans/function/loan_validation" method="post">
             <div class="row col-12">
+                <input type="hidden" name="loanKind" value="Extension Loan">
+               <?php
+                foreach($user_data->result() as $row) {
+                ?>
+                <input type="hidden" name="clientId" value="<?php echo $row->id; ?>">
+                <?php    
+                }
+                ?>
+                <input type="hidden" name="referenceNumber" value="<?php echo date('Ymdhis');?>"> 
                 <div class="col-6">
                     <div class="form-group">
                         <label for="LoanType">Loan Type</label>
