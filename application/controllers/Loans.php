@@ -45,7 +45,6 @@ class Loans extends CI_Controller {
         $this->form_validation->set_rules('effectiveDate', 'Effective Date', 'required');
         $this->form_validation->set_rules('referenceCheck', 'Reference Check', 'trim|max_length[50]');
         $this->form_validation->set_rules('postAccount', 'Post to Account', 'trim|max_length[50]');
-        $id = $this->uri->segment(3);
         if($this->form_validation->run()) {
             $this->load->model('loan_model');
             $loanKind = $this->input->post('loanKind');
@@ -73,7 +72,7 @@ class Loans extends CI_Controller {
                     'loanType'=>$this->input->post('loanType'),
                     'loanKind'=>$this->input->post('loanKind'),
                     'monthlyPayment'=>$this->input->post('monthlyPayment'),
-                    'loanTerms'=>$this->input->post('loanTerms'),
+                    'loanTerms'=>$this->input->post('paymentTerms'),
                     'interest'=>$this->input->post('interestRate'),
                     'serviceFee'=>$this->input->post('serviceCharge'),
                     'notarialFee'=>$this->input->post('notarialFee'),
@@ -90,7 +89,7 @@ class Loans extends CI_Controller {
                     'loanType'=>$this->input->post('loanType'),
                     'loanKind'=>$this->input->post('loanKind'),
                     'monthlyPayment'=>$this->input->post('monthlyPayment'),
-                    'loanTerms'=>$this->input->post('loanTerms'),
+                    'loanTerms'=>$this->input->post('paymentTerms'),
                     'interest'=>$this->input->post('interestRate'),
                     'serviceFee'=>$this->input->post('serviceCharge'),
                     'notarialFee'=>$this->input->post('notarialFee'),
@@ -109,7 +108,7 @@ class Loans extends CI_Controller {
                     'loanType'=>$this->input->post('loanType'),
                     'loanKind'=>$this->input->post('loanKind'),
                     'monthlyPayment'=>$this->input->post('monthlyPayment'),
-                    'loanTerms'=>$this->input->post('loanTerms'),
+                    'loanTerms'=>$this->input->post('paymentTerms'),
                     'interest'=>$this->input->post('interestRate'),
                     'serviceFee'=>$this->input->post('serviceCharge'),
                     'notarialFee'=>$this->input->post('notarialFee'),
@@ -121,9 +120,8 @@ class Loans extends CI_Controller {
                     'addAmount'=>$this->input->post('loanAmountToAdd')
                 );
             }
-            
             $resultLoan = $this->loan_model->enrollLoan($data);
-            redirect(base_url().'loans/home/'.$id);
+            redirect(base_url().'loans/home/'.$this->input->post('clientId'));
         } else {
             $loan = $this->input->post('loanKind');
             if($loan == "New Loan") {
