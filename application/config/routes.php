@@ -51,8 +51,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'pages';
 $route['(:any)'] = 'pages/view/$1';
+// Loans
 $route['loans/(:any)'] = 'loans/view/$1';
+$route['loans/home/(:any)'] = 'loans/view/home/$1';
+$route['loans/loanDetails_new/(:any)'] = 'loans/view/loanDetails_new/$1';
+$route['loans/loanDetails_renewal/(:any)'] = 'loans/view/loanDetails_renewal/$1';
+$route['loans/loanDetails_additional/(:any)'] = 'loans/view/loanDetails_additional/$1';
+$route['loans/loanDetails_extension/(:any)'] = 'loans/view/loanDetails_extension/$1';
+$route['loans/addNewLoan/(:any)'] = 'loans/view/addNewLoan/$1';
+$route['loans/addRenewLoan/(:any)'] = 'loans/view/addRenewLoan/$1';
+$route['loans/addExtensionLoan/(:any)'] = 'loans/view/addExtensionLoan/$1';
+$route['loans/addAdditionalLoan/(:any)'] = 'loans/view/addAdditionalLoan/$1';
+$route['loans/function/(:any)'] = 'loans/$1';
+// Collections
 $route['collections/(:any)'] = 'collections/view/$1';
+// Clients
 $route['clients/(:any)'] = 'clients/view/$1';
 $route['clients/home/(:any)'] = 'clients/view/home/$1';
 $route['clients/function/(:any)'] = 'clients/$1';

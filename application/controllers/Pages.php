@@ -97,9 +97,9 @@ class Pages extends CI_Controller {
 						$this->session->set_flashdata('error', 'User has been deactivated');
 						$this->logout();
 					} else if($user_id->employee_position == 'Loans Processor') {
-						redirect(base_url().'loans/home');
+						redirect(base_url().'clients/home');
 					} else if($user_id->employee_position == 'Loans Collector') {
-						redirect(base_url().'collections/home');
+						redirect(base_url().'clients/home');
 					} else if($user_id->employee_position == 'Manager') {
 						redirect(base_url().'clients/home');
 					} 

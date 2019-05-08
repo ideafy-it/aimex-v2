@@ -37,7 +37,7 @@ class Clients extends CI_Controller {
         }
     }
 
-    public function client_validation() {
+    public function client_validation() {   
         $this->load->library('form_validation');
         // Client Basic Information Validations
         $this->form_validation->set_rules('clientFirstName', 'Client First Name', 'trim|max_length[50]|required');
@@ -129,7 +129,7 @@ class Clients extends CI_Controller {
         }
     }
 
-    public function view_clients() {
+    // public function view_clients() {
 
-    }
+    // }
 }

@@ -21,7 +21,6 @@ class Client_model extends CI_Model {
         $this->db->where('clientLastName', $firstname);
         $query = $this->db->get('tbl_client');
         $client = $query->result();
-
         return $client;
     }
 
@@ -67,13 +66,11 @@ class Client_model extends CI_Model {
 
     public function fetch_client() {
         $query = $this->db->get('tbl_client');
-
         return $query;
     }
 
     public function fetch_search($filtered, $search) {
         $query = $this->db->get_where('tbl_client', array($filtered => $search));
-
         return $query;
     }
 }
